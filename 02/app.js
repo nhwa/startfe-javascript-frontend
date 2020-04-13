@@ -117,23 +117,23 @@ todos.forEach(function(todo){
 //   console.log('\n');
 // }
 // js코드) 위에서 만든 구구단코드를 함수로 작성하세요 
-// function gugudan(first,last){
-//   for(var i=first; i<last+1; i++){
-    // for(var j=1; j<10; j++){
-    //   console.log(i+" * "+j+" = "+i*j);
-    // }
-//     console.log('\n');
-//   }
-// }
-// gugudan(2,9);
+function gugudan(first,last){
+  for(var i=first; i<last+1; i++){
+    for(var j=1; j<10; j++){
+      console.log(i+" * "+j+" = "+i*j);
+    }
+    console.log('\n');
+  }
+}
+gugudan(2,9);
 
 //js코드) 메소드가 포함된 객체를 생성하세요
-// var cat = {
-//   greet: function() {
-//     console.log('Hello!');
-//   }
-// };
-// cat.greet();
+var cat = {
+  greet: function() {
+    console.log('Hello!');
+  }
+};
+cat.greet();
 
 /* js코드) window.prompt() 를 사용하여 사용자에게 숫자값을 
 입력받고 받은 숫자값들의 합을 출력하는 코드를 작성하세요.

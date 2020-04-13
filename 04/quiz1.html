@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>문제소스</title>
+<style>
+    h1{
+        width:480px;
+        margin: 30px auto;
+
+    }
+    #wrap{
+        width:480px;
+        height:180px;
+        margin:0 auto;
+        text-align: center;
+    }
+    .article{
+        width:150px;
+        margin:5px;
+        float: left;
+    }
+    .article img{
+        width:100%;
+        height:auto;
+        border: 0.4px solid #bbb;
+    }
+    .article span{
+        padding:5px 0;
+        display:block;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+    }
+    #click{
+        width:200px;
+        height:40px;
+        margin:0 auto;
+        text-align: center;
+        color: #333;
+    }
+    #click #clickwrap{
+        width:130px;
+        height:40px;
+        margin:0 auto;
+    }
+    #click #clickup,#clickdown{
+        border: 1px solid #bbb;
+        border-radius: 5px;
+        width:25px;
+        height:25px;
+        float:left;
+        padding:2px;
+    }
+    #click #page{
+        float:left;
+        width:65px;
+        height:30px;
+        color:#888;
+        line-height: 25px;
+    }
+    #click #page #currentpagenum{
+        color:#000;
+        font-weight: 400;
+    }
+</style>
+</head>
+<body>
+<h1>간단한 Carousel</h1>
+<div id="wrap">
+</div>
+<div id="click">
+    <div id="clickwrap">
+        <div id="clickdown">&lt;</div>
+        <div id="page">
+            <span id="currentpagenum"></span><span>&nbsp;&#47;&nbsp;</span><span id="totalpage"></span>
+        </div>
+        <div id="clickup">&gt;</div>
+    </div>
+</div>
+
+<script>
+    var todayPhoto = [
+        {"url":"http://media.daum.net/photo/2841","img":"http://icon.daumcdn.net/w/c/12/05/82877085750988319.jpeg","title":"&quot;뜨면 끝장&quot; 최강 공격헬기 성능이 설마","id":"20120516082207657"}
+        ,{"url":"http://media.daum.net/entertain/photo/gallery/?gid=100320","img":"http://icon.daumcdn.net/w/c/12/05/82876693901189319.jpeg","title":"&#39;오늘만&#39; 필리핀 새댁 5개국어 능통 엄친딸","id":"20120516091011626"}
+        ,{"url":"http://media.daum.net/photo/4010","img":"http://icon.daumcdn.net/w/c/12/05/82876307459008319.jpeg","title":"[북한 결혼식 풍경] 신랑·신부 &quot;행복합니다&quot;","id":"20120516092605081"}
+        ,{"url":"http://sports.media.daum.net/general/gallery/gagsports/index.html","img":"http://icon.daumcdn.net/w/c/12/05/81730673405131839.jpeg","title":"&#39;내가 더 잘해&#39; 후보GK 경기 난입해 선방","id":"20120516100608409"}
+        ,{"url":"http://sports.media.daum.net/general/gallery/0516ufc/index.html","img":"http://icon.daumcdn.net/w/c/12/05/81728759258718839.jpeg","title":"양동이의 하이킥에 타바레스 &#39;주춤&#39;","id":"20120516093313331"}
+        ,{"url":"http://media.daum.net/entertain/photo/gallery/?gid=100539","img":"http://icon.daumcdn.net/w/c/12/05/81728404408992839.jpeg","title":"이승철 아내와 딸 사진 공개 &quot;사주에. .&quot;","id":"20120516093918544"}
+        ,{"url":"http://media.daum.net/photo/3899","img":"http://icon.daumcdn.net/w/c/12/05/81728227037306839.jpeg","title":"생후 6개월에 프랑스로 입양됐던 아이가..","id":"20120516030614331"}
+        ,{"url":"http://sports.media.daum.net/general/gallery/STARKIMYUNA/index.html","img":"http://icon.daumcdn.net/w/c/12/05/81727815537682839.jpeg","title":"&#39;교생&#39; 김연아, 스승의날에도 인기폭발","id":"20120516092003892"}
+    ];
+
+    //기본 이미지슬라이드
+    function ImgSlide(r){
+        for(var i=0; i<wrap.children.length; i++){
+            wrap.removeChild[i];
+        }
+        var str = '';
+        for(var i=r; i<r+3; i++){
+            if(i<todayPhoto.length){
+            str += '<div class="article">';
+            str += '<img src="'+todayPhoto[i].img+'"> ';
+            str += '<span>'+todayPhoto[i].title+'</span>';
+            str += '</div>';
+            }
+        }
+    wrap.innerHTML = str;
+    }
+
+    // click버튼 화면
+    function ClickButtons(curpage,totalpage){
+    document.querySelector('#currentpagenum').innerHTML = curpage;
+    document.querySelector('#totalpage').innerHTML = totalpage+1;
+    };
+
+    var wrap = document.getElementById('wrap');
+    var curpage = 1;
+    //현재페이지
+    var curimg = 0;
+    //이미지의 위치
+    var totalpage = (todayPhoto.length % 3);
+    //총 페이지수
+    ImgSlide(curimg);
+    ClickButtons(curpage,totalpage);
+    //기본 홈페이지
+
+    document.querySelector('#clickup').addEventListener('click',function(event){
+        if(curpage <= totalpage){
+            curpage = curpage + 1;
+            curimg = curimg + 3;
+            ImgSlide(curimg);
+            ClickButtons(curpage,totalpage);
+        }
+    });
+
+    document.querySelector('#clickdown').addEventListener('click',function(event){
+        if(curimg>0){
+            curpage = curpage - 1;
+            curimg = curimg - 3;
+            ImgSlide(curimg);
+            ClickButtons(curpage,totalpage);
+        }
+    });
+    
+</script>
+
+</body>
+</html>
