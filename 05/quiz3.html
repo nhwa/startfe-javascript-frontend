@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>DOM</title>
+    <style>
+      body {
+        padding: 10px;
+      }
+      .box {
+        width: 100px;
+        height: 30px;
+        background-color: #ddd;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" class="txt" value="hello" />
+      <button class="text-btn">TEXT 넣기</button>
+      <br />
+      <button class="add-red">빨간색으로</button>
+      <button class="add-btn">추가</button>
+      <button class="delete-btn">삭제</button>
+      <button class="reset-btn">초기화</button>
+      <button class="toggle-btn">보이기,숨기기 토글</button>
+      <button class="image-btn">이미지</button>
+    </div>
+    <div class="box"></div>
+
+    <script>
+        /*
+        //문제1 .add-red 클릭하면 .box class속성에 .red를 추가
+        document.querySelector('.add-red').addEventListener('click',function(event){
+            document.querySelector('.box').classList.add('red');
+        });
+
+        //문제2 .add-btn 클릭하면 .box 엘리먼트를 body 에 하나씩 추가
+        document.querySelector('.add-btn').addEventListener('click',function(event){
+            var box = document.createElement('div');
+            box.classList.add('box');
+            document.querySelector('body').appendChild(box);
+        });
+
+        //문제3 .delete-btn 클릭하면 모든 .box 엘리먼트를 하나씩 삭제
+        document.querySelector('.delete-btn').addEventListener('click',function(event){
+            document.querySelector('.box').remove();
+        });
+
+        //문제4 .text-btn 클릭하면 .txt에 value값을 가져와서 .box에 가져온 value값 텍스트 추가
+        //.box 엘리먼트가 여러개 있을경우 동일하게 추가 
+        document.querySelector('.text-btn').addEventListener('click',function(event){
+            var value = document.querySelector('.txt').value;
+            document.querySelector('.box').innerHTML = value;
+        });
+
+        //문제 5.reset-btn 클릭하면 모든 .box 엘리먼트 제거
+        document.querySelector('.reset-btn').addEventListener('click',function(event){
+            var boxes = document.querySelectorAll('.box');
+            for(var i =0; i<boxes.length; i++){
+                document.body.removeChild(boxes[i]);
+            }
+        });
+
+        // 문제6 .toggle-btn 클릭하면 .box 엘리먼트 숨기고 다시 클릭하면 보이게 토글버튼 처리면
+        document.querySelector('.toggle-btn').addEventListener('click',function(event){
+            var box = document.querySelector('.box');
+            if(box.style.display !='none')
+                box.style.display = 'none';
+            else
+                box.style.display = 'block';
+        });
+
+        //문제7 .image-btn 클릭하면 .box 엘리먼트에 이미지 출력
+        //이미지 주소: https://i.imgur.com/69NjYBH.png
+        //.box 엘리먼트가 없을경우 생성후 처리 
+          document.querySelector('.image-btn').addEventListener('click',function(event){
+            var box = document.querySelector('.box');
+            if(!box){
+                var box = document.createElement('div');
+                box.classList.add('box');
+                document.body.appendChild(box);
+            }
+            var img = document.createElement('img');
+            img.setAttribute('src','https://i.imgur.com/69NjYBH.png');
+            box.appendChild(img);
+        });
+        
+        */
+        
+        //문제8 위에서 작성한 코드들을 최대한 함수화, 재사용성 높임
+        function Red(element){
+                element.classList.add('red');
+        }
+        function Add_element(element){
+            var element = document.createElement('div');
+            element.classList.add('box');
+            document.body.appendChild(element);
+        }
+        function Delete_element(element){
+            element.remove();
+        }
+        function Add_value(element,value){
+            element.innerHTML = value;
+        }
+        function DeleteAll_element(element){
+            for(var i =0; i<element.length; i++){
+                document.body.removeChild(element[i]);
+            }
+        }
+        function Toggle(element){
+            if(element.style.display !='none')
+                element.style.display = 'none';
+            else
+                element.style.display = 'block';
+        }
+        function ImgPrint(element,elementname,src){
+            if(!element){
+                var element = document.createElement('div');
+                element.classList.add(elementname);
+                document.body.appendChild(element);
+            }
+            var img = document.createElement('img');
+            img.setAttribute('src',src);
+            element.appendChild(img);
+        }
+
+        //문제1 
+        document.querySelector('.add-red').addEventListener('click',function(event){
+            var box = document.querySelector('.box');
+            Red(box);
+        });
+        //문제2
+        document.querySelector('.add-btn').addEventListener('click',function(event){
+            var box = document.querySelector('.box');
+            Add_element(box);
+        });
+        //문제3
+        document.querySelector('.delete-btn').addEventListener('click',function(event){
+            var box = document.querySelector('.box');
+            Delete_element(box);
+        });
+        //문제 4
+        document.querySelector('.text-btn').addEventListener('click',function(event){
+            var box = document.querySelector('.box');
+            var value = document.querySelector('.txt').value;
+            Add_value(box,value);
+        });
+        //문제 5
+        document.querySelector('.reset-btn').addEventListener('click',function(event){
+            var boxes = document.querySelectorAll('.box');
+            DeleteAll_element(boxes);
+        });
+        //문제 6
+        document.querySelector('.toggle-btn').addEventListener('click',function(event){
+            var box = document.querySelector('.box');
+            Toggle(box);
+        });
+        //문제 7
+        document.querySelector('.image-btn').addEventListener('click',function(event){
+            var box = document.querySelector('.box');
+            ImgPrint(box,'box','https://i.imgur.com/69NjYBH.png');
+        });
+
+
+    </script>
+  </body>
+</html>
