@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "build": "webpack && copyfiles dist/* ../docs"
   },
   "devDependencies": {
     "css-loader": "^3.5.3",
@@ -23,6 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "copy-webpack-plugin": "^6.0.2",
     "json-server": "^0.16.1"
   }
 }
