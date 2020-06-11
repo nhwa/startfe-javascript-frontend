@@ -15,5 +15,6 @@ module.exports = {
   rules: {
     'no-unused-vars': 'warn',
     'import/prefer-default-export': 'off',
+    'spaced-comment': 'off',
   },
 };
