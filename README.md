@@ -9,15 +9,15 @@ START-FE
 #### 목록
 01_ ECMAScript - ES5 문법 기초 
 
-02_ ECMAScript - ES5 CRUD 작성 및 for,객체, 함수, 입력값..   
-
+02_ ECMAScript - ES5 CRUD 작성 및 for,객체, 함수, 입력값..  
 03_ ECMAScript - ES5 Dom 탐색, 생성 및 삽입, 삭제, eventlistner..  
 
 04_ 간단한 이미지 슬라이드 / 체스판 그리기   
 
 05_ ECMAScript - ES5 Dom 제어 실습, 재사용을 위한 함수화, mouse 이벤트 제어   
 
-06_ ECMAScript  - ES6 기초문법, 화살표 함수  - mouse이벤트 제어 (mousedown, mousemove, mouseup)
+06_ ECMAScript  - ES6 기초문법, 화살표 함수
+  - mouse이벤트 제어 (mousedown, mousemove, mouseup)
   - 구구단 출력 프로그램 (입력, 템플릿표현식 /^[0-9]{1,100}/g 사용, 숫자가 아닌 값 alert 경고메세지 출력)
   - 랜덤생성 타겟게임 제작(box 영역에서 랜덤 출현, 클릭시 +1, 못클릭할시 -1, 생명 0일때 gameover 메세지 출력)
 
