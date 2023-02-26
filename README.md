@@ -1,12 +1,13 @@
-# START-FE
+START-FE
+=============
 ## 고급웹개발론 - 실습 저장소
 ---
 ### 목록
-01_ ECMAScript - ES5 문법 기초
-02_ ECMAScript - ES5 CRUD 작성 및 for,객체, 함수, 입력값.. 
-03_ ECMAScript - ES5 Dom 탐색, 생성 및 삽입, 삭제, eventlistner..
-04_ 간단한 이미지 슬라이드 / 체스판 그리기
-05_ ECMAScript - ES5 Dom 제어 실습, 재사용을 위한 함수화, mouse 이벤트 제어
+01_ ECMAScript - ES5 문법 기초   
+02_ ECMAScript - ES5 CRUD 작성 및 for,객체, 함수, 입력값..   
+03_ ECMAScript - ES5 Dom 탐색, 생성 및 삽입, 삭제, eventlistner..   
+04_ 간단한 이미지 슬라이드 / 체스판 그리기   
+05_ ECMAScript - ES5 Dom 제어 실습, 재사용을 위한 함수화, mouse 이벤트 제어   
 
 06_ ECMAScript 
 - ES6 기초문법,
