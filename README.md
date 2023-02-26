@@ -3,7 +3,7 @@ START-FE
 ### 고급웹개발론 - 실습 저장소
 
 #### SKILL
-  HTML5, CSS, JavasCript, react
+  `HTML5, CSS, JavasCript, React`
 
 
 #### 목록
