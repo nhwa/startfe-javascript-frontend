@@ -1,9 +1,12 @@
 START-FE
 =============
-## 고급웹개발론 - 실습 저장소
+### 고급웹개발론 - 실습 저장소
+
+#### SKILL
+  HTML5, CSS, JavasCrpit
 
 
-### 목록
+#### 목록
 01_ ECMAScript - ES5 문법 기초 
 
 02_ ECMAScript - ES5 CRUD 작성 및 for,객체, 함수, 입력값..   
@@ -15,7 +18,7 @@ START-FE
 05_ ECMAScript - ES5 Dom 제어 실습, 재사용을 위한 함수화, mouse 이벤트 제어   
 
 06_ ECMAScript 
-- ES6 기초문법,
+- ES6 기초문법, 화살표 함수
 - mouse이벤트 제어 (mousedown, mousemove, mouseup)
 - 구구단 출력 프로그램 (입력, 템플릿표현식 /^[0-9]{1,100}/g 사용, 숫자가 아닌 값 alert 경고메세지 출력)
 - 랜덤생성타깃게임 제작(box 영역에서 랜덤 출현, 클릭시 +1, 못클릭할시 -1, 생명 0일때 gameover 메세지 출력)
@@ -26,6 +29,7 @@ START-FE
 - 랜덤 숫자가 출력중에는 생성버튼이 비활성화
 
 08_ html 내용 출력하기 
+- promise 비동기처리
 - 성공 : quiz9.html 입력후 가져오기
 - 에러 : https://daum.net 입력후 가져오기
 
