@@ -3,7 +3,7 @@ START-FE
 ### 고급웹개발론 - 실습 저장소
 
 #### SKILL
-  HTML5, CSS, JavasCrpit
+  HTML5, CSS, JavasCript, react
 
 
 #### 목록
@@ -43,7 +43,10 @@ origin은 도메인과 다르게 호스트뿐만 아니라 포트와 스키마�
 09_ 카카오 검색 API 활용 다음 검색 구현 - url, contents 웹문서 내용 검색
 
 10_ webpack 모듈번들러를 통한 평균과 랜덤 숫자를 구하는 모듈 구현
-* webpack : 웹팩은 하나의 시작점(Entry point)으로부터 의존적인 모듈을 전부 찾아내서 하나의 파일로 만든다.
+* webpack : 모듈간의 의존 관계를 트리로 구성하여 하나의 번들 파일로 제공하게 되는데 HTML 파일은 이 최종 번들 파일만을 참조할 수 있고
+  로딩 속도를 높힐 수 있다.
+  ![image](https://user-images.githubusercontent.com/44343908/221415514-4efbc4fe-6eca-47cc-9bfc-d518a720d31d.png)
+
 
 11_ Todo List 관리 웹 어플리케이션
 - 삽입, 삭제, 체크 기능
