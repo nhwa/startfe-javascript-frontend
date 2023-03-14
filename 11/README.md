@@ -2,6 +2,12 @@
 
 > json-server를 이용해 REST API 실습
 
+
+
+https://user-images.githubusercontent.com/44343908/224889422-98a70007-2858-435d-abd2-0f81b65a88b2.mp4
+
+
+
 ```
 
   // GET (Read)
