@@ -1,13 +1,18 @@
 {
   "todos": [
     {
-      "id": 1,
-      "text": "js공부",
+      "id": 7,
+      "text": "Spring",
       "isDone": false
     },
     {
-      "id": 2,
-      "text": "js공부1",
+      "id": 8,
+      "text": "React",
+      "isDone": true
+    },
+    {
+      "id": 10,
+      "text": "Spring boot",
       "isDone": false
     }
   ]
