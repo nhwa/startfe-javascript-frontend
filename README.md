@@ -64,11 +64,63 @@ START-FE
 
 11_ Todo List 관리 웹 어플리케이션
 - 삽입, 삭제, 체크 기능
-- 로컬 서버 이용, Json 서버 이용
+- 로컬 서버 이용
+- Json 서버 이용 Restful API실습
+
+```
+  // GET (Read)
+  function loadData(callback){
+    // JSON 서버 이용
+    fetch('http://localhost:3000/todos',{
+      method: 'GET'
+      }).then(response => response.json())
+        .then((data) => {
+          callback(data)
+    }).catch((error) => console.log(error));
+  }
+  //POST 
+  function saveData(data, callback) {
+    // console.log(data);
+    fetch('http://localhost:3000/todos',{
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    }).then((response) => { 
+        callback(response)
+    }).catch((error) => console.log(error));
+  }
+  //PATCH
+  function patchData(id, done, callback){
+    fetch(`http://localhost:3000/todos/${id}`,{
+        method: 'PATCH',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({ isDone: done }),
+        })
+        .then((response) => { 
+          callback(response)
+      }).catch((error) => console.log(error));
+  }
+  //DELETE
+  function deleteData(id, callback){
+    fetch(`http://localhost:3000/todos/${id}`,{
+        method: 'DELETE', 
+        headers: {
+          'Content-type': 'application/json',
+        }})
+        .then((response) => { 
+          callback(response)
+      }).catch((error) => console.log(error));
+  }
+```
 
 ![startfe1](https://user-images.githubusercontent.com/44343908/223637181-e896d377-8018-4590-a1f0-4e8f7978a28f.png)
 ![startfe2](https://user-images.githubusercontent.com/44343908/223637185-ff004f35-2650-4fef-adc8-d8f25f6ede0c.png)
 ![startfe3](https://user-images.githubusercontent.com/44343908/223637177-7af6745a-cba2-4582-af64-0f9b41b6c485.png)
+
+
+https://user-images.githubusercontent.com/44343908/225211928-b1f8d4db-4a80-4df7-a1c5-f0e2ec22a671.mp4
 
 -------------
 
